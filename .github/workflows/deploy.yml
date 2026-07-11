@@ -15,9 +15,9 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     -name: Desplegar Bicep
-    -uses: azure/arm-deploy@v1
-      with:
-        scope: subscription
-        region: spaincentral
-        template: ./main.bicep
-        deploymentName: github-deploy-01
+     uses: azure/arm-deploy@v1
+     with:
+      scope: subscription
+      region: spaincentral
+      template: ./main.bicep
+      deploymentName: github-deploy-01
