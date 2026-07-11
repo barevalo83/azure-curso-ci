@@ -8,17 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
+    - name: Checkout del repositorio
+      uses: actions/checkout@v4  # Corregido: Evita advertencias de Node 20
+    
     - name: Azure Login
-      uses: azure/login@v1
+      uses: azure/login@v2      # Corregido: Versión moderna sin dependencias viejas
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-          
-
     - name: Desplegar Bicep
-      uses: azure/arm-deploy@v1
+      uses: azure/arm-deploy@v2  # Corregido: Versión moderna optimizada
       with:
         scope: subscription
         region: spaincentral
