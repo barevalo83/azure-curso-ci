@@ -1,7 +1,7 @@
 name: Despliegue a Azure
 on:
   push:
-    branches: ¨[ main ]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -9,6 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Azure Login
       uses: azure/login@v1
       with:
